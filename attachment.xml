@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="tz_portfolio_plus-plugin" group="content" method="upgrade">
+    <name>plg_content_attachment</name>
+    <author>DuongTVTemPlaza</author>
+    <creationDate>October 07th 2016</creationDate>
+    <copyright>Copyright (C) 2017-2018 TZ Portfolio.com. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>support@templaza.com</authorEmail>
+    <authorUrl>www.templaza.com</authorUrl>
+    <version>1.0.6</version>
+    <description>PLG_CONTENT_ATTACHMENT_XML_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="attachment">attachment.php</filename>
+        <filename>index.html</filename>
+        <filename>access.xml</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>admin</folder>
+        <folder>controllers</folder>
+        <folder>css</folder>
+        <folder>fonts</folder>
+        <folder>helpers</folder>
+        <folder>language</folder>
+        <folder>models</folder>
+        <folder>modules</folder>
+        <folder>views</folder>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field type="text" name="attachment_folder"
+                       label="PLG_CONTENT_ATTACHMENT_ATTACHMENT_PATH_LABEL"
+                       description="PLG_CONTENT_ATTACHMENT_ATTACHMENT_PATH_DESC"/>
+                <field type="text" name="file_size"
+                       default="10"
+                       label="PLG_CONTENT_ATTACHMENT_FILE_SIZE_LABEL"
+                       description="PLG_CONTENT_ATTACHMENT_FILE_SIZE_DESC"/>
+                <field type="text" name="file_type"
+                       default="bmp,csv,doc,gif,ico,jpg,jpeg,odg,odp,ods,odt,pdf,png,ppt,swf,txt,xcf,xls,BMP,CSV,DOC,GIF,ICO,JPG,JPEG,ODG,ODP,ODS,ODT,PDF,PNG,PPT,SWF,TXT,XCF,XLS"
+                       label="PLG_CONTENT_ATTACHMENT_FILE_TYPES_LABEL"
+                       description="PLG_CONTENT_ATTACHMENT_FILE_TYPES_DESC"/>
+            </fieldset>
+            <fieldset name="front_end"
+                      label="PLG_CONTENT_ATTACHMENT_FRONT_END_FIELDSET_LABEL"
+                      description="PLG_CONTENT_ATTACHMENT_FRONT_END_CONFIG_SETTINGS_DESC">
+                <field type="radio" name="attachment_enable_awesome_font"
+                       default="1" class="btn-group"
+                       label="PLG_CONTENT_ATTACHMENT_ENABLE_AWESOME_FONT_LABEL">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="radio" name="attachment_show_hit"
+                       default="1" class="btn-group"
+                       label="PLG_CONTENT_ATTACHMENT_SHOW_HIT_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="radio" name="attachment_show_icon"
+                       default="1" class="btn-group"
+                       label="PLG_CONTENT_ATTACHMENT_SHOW_ICON_LABEL">
+                    <option value="0">JHIDE</option>
+                    <option value="1">JSHOW</option>
+                </field>
+                <field type="list" name="attachment_orderby"
+                       default="rid"
+                       label="PLG_CONTENT_ATTACHMENT_ORDER_BY_LABEL"
+                       description="PLG_CONTENT_ATTACHMENT_ORDER_BY_DESC">
+                    <option value="rid">JGLOBAL_MOST_RECENT_FIRST</option>
+                    <option value="id">JGLOBAL_OLDEST_FIRST</option>
+                    <option value="alpha">JGLOBAL_TITLE_ALPHABETICAL</option>
+                    <option value="ralpha">JGLOBAL_TITLE_REVERSE_ALPHABETICAL</option>
+                    <option value="hits">PLG_CONTENT_ATTACHMENT_MOST_DOWNLOAD</option>
+                    <option value="rhits">PLG_CONTENT_ATTACHMENT_LEAST_DOWNLOAD</option>
+                    <option value="ordering">JFIELD_ORDERING_LABEL</option>
+                </field>
+            </fieldset>
+        </fields>
+
+        <!-- START PERMISSIONS'S PARAMTERS -->
+        <fieldset name="permissions"
+                  label="JCONFIG_PERMISSIONS_LABEL"
+                  description="JCONFIG_PERMISSIONS_DESC">
+            <field type="tzrules" name="rules"
+                   section="addon" filter="rules"
+                   class="inputbox" validate="rules"
+                   label="JCONFIG_PERMISSIONS_LABEL"/>
+        </fieldset>
+        <!-- END PERMISSIONS'S PARAMTERS -->
+    </config>
+</extension>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter" addfieldpath="administrator/components/com_tz_portfolio_plus/models/fields">
+        <field type="text" name="search"
+               label="JSEARCH_FILTER"
+               description="PLG_CONTENT_ATTACHMENT_FILTER_SEARCH_DESC"
+               hint="JSEARCH_FILTER"/>
+        <field type="status" name="published"
+               filter="-2,0,1,*"
+               onchange="this.form.submit();"
+               label="COM_CONTENT_FILTER_PUBLISHED"
+               description="COM_CONTENT_FILTER_PUBLISHED_DESC">
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+
+        <field type="modal_article" name="article"
+               edit = "false" submitform="true"
+               label="COM_TZ_PORTFOLIO_PLUS_ARTICLES_ASSIGNMENT"/>
+    </fields>
+
+    <fields name="list">
+        <field type="list" name="fullordering"
+               default="id DESC"
+               onchange="this.form.submit();"
+               label="COM_CONTENT_LIST_FULL_ORDERING"
+               description="COM_CONTENT_LIST_FULL_ORDERING_DESC">
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+            <option value="ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+            <option value="published ASC">JSTATUS_ASC</option>
+            <option value="published DESC">JSTATUS_DESC</option>
+            <option value="value.file_name ASC">PLG_CONTENT_ATTACHMENT_HEADING_FILE_NAME_ASC</option>
+            <option value="value.file_name DESC">PLG_CONTENT_ATTACHMENT_HEADING_FILE_NAME_DESC</option>
+            <option value="value.title ASC">JGLOBAL_TITLE_ASC</option>
+            <option value="value.title DESC">JGLOBAL_TITLE_DESC</option>
+            <option value="value.title_attrib ASC">PLG_CONTENT_ATTACHMENT_HEADING_TITLE_ATTRIBUTE_ASC</option>
+            <option value="value.title_attrib DESC">PLG_CONTENT_ATTACHMENT_HEADING_TITLE_ATTRIBUTE_DESC</option>
+            <option value="value.file_type ASC">PLG_CONTENT_ATTACHMENT_HEADING_FILE_TYPE_ASC</option>
+            <option value="value.file_type DESC">PLG_CONTENT_ATTACHMENT_HEADING_FILE_TYPE_DESC</option>
+            <option value="value.file_size ASC">PLG_CONTENT_ATTACHMENT_HEADING_FILE_SIZE_ASC</option>
+            <option value="value.file_size DESC">PLG_CONTENT_ATTACHMENT_HEADING_FILE_SIZE_DESC</option>
+            <option value="value.hits ASC">PLG_CONTENT_ATTACHMENT_HEADING_DOWNLOAD_ASC</option>
+            <option value="value.hits DESC">PLG_CONTENT_ATTACHMENT_HEADING_DOWNLOAD_DESC</option>
+            <option value="id ASC">JGRID_HEADING_ID_ASC</option>
+            <option value="id DESC">JGRID_HEADING_ID_DESC</option>
+        </field>
+
+        <field type="limitbox" name="limit"
+               default="25" class="input-mini"
+               onchange="this.form.submit();"
+               label="COM_CONTENT_LIST_LIMIT"
+               description="COM_CONTENT_LIST_LIMIT_DESC"/>
+    </fields>
+</form>
